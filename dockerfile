@@ -16,4 +16,6 @@ RUN apt-get update && apt-get install -y unzip git \
 EXPOSE 10000
 
 # Run built-in PHP server
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "."]
+CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t ."]
+
+
