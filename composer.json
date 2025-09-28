@@ -1,8 +1,8 @@
 {
-  "name": "troopevent",
+  "name": "loken86/troopevent",
   "description": "Simple PHP site hosted on Render",
   "require": {},
   "scripts": {
-    "start": "php -S 0.0.0.0:10000 -t ."
+    "start": "php -S 0.0.0.0:$PORT -t ."
   }
 }
