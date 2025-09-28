@@ -1,0 +1,8 @@
+{
+  "name": "troopevent",
+  "description": "Simple PHP site hosted on Render",
+  "require": {},
+  "scripts": {
+    "start": "php -S 0.0.0.0:10000 -t ."
+  }
+}
