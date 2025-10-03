@@ -1,4 +1,4 @@
-/* Base Styles */
+/* ---------------- Base Styles ---------------- */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -16,7 +16,7 @@ a:hover {
     color: #3c30c2;
 }
 
-/* Header */
+/* ---------------- Header ---------------- */
 header {
     background-color: #301eb4;
     color: white;
@@ -26,26 +26,31 @@ header {
     font-weight: bold;
 }
 
-/* Navigation */
+/* ---------------- Navigation ---------------- */
 nav {
-    text-align: center;
-    margin: 15px 0;
-    position: relative; /* anchor for dropdown absolute positioning */
+    display: flex;
+    justify-content: space-between; /* hamburger left, links right */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
 }
 
-/* Sign Up link */
-nav > a {
-    display: inline-block;
-    margin: 0 10px;
+/* Right-side links */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Individual links */
+.nav-right > a {
     font-weight: bold;
 }
 
-/* Dropdown container */
+/* Dropdown container (hamburger) */
 .dropdown {
-    position: absolute;
-    top: 50%;         /* vertical center in nav */
-    right: 20px;      /* <<< adjust this value to move hamburger left/right */
-    transform: translateY(-50%);
+    position: relative;
+    display: inline-block;
 }
 
 /* Hamburger button */
@@ -64,9 +69,9 @@ nav > a {
     display: none;
     position: absolute;
     top: 100%;   /* below the button */
-    right: 0;    /* align right edge with button */
+    left: 0;     /* align left by default */
     background-color: white;
-    min-width: 150px;
+    min-width: 160px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     z-index: 1;
     border-radius: 5px;
@@ -85,9 +90,11 @@ nav > a {
 }
 
 /* Show dropdown */
-.show { display: block; }
+.show {
+    display: block;
+}
 
-/* Main Content */
+/* ---------------- Main Content ---------------- */
 main {
     max-width: 900px;
     margin: 20px auto;
@@ -97,7 +104,7 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Event Cards */
+/* ---------------- Event Cards ---------------- */
 .event-card {
     border: 1px solid #301eb4;
     padding: 15px;
@@ -111,13 +118,12 @@ main {
     margin-top: 0;
 }
 
-/* Signed Up List */
 .event-card p strong {
     display: inline-block;
     margin-bottom: 5px;
 }
 
-/* Forms */
+/* ---------------- Forms ---------------- */
 form input, form textarea, form button {
     display: block;
     width: 100%;
@@ -140,5 +146,13 @@ form button:hover {
     background-color: #4535c2;
 }
 
-/* Responsive */
-@medi
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+    .nav-right {
+        display: none; /* hide right links on small screens */
+    }
+    .dropdown-content {
+        left: auto;
+        right: 0; /* dropdown aligns to right on mobile */
+    }
+}
