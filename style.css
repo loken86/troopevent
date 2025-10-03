@@ -57,7 +57,7 @@ nav > a {
 
     /* Add positioning */
     position: absolute; /* or fixed depending on your use case */
-    right: 650px; /* Adjust the distance from the left side */
+    right: 400px; /* Adjust the distance from the left side */
      /* Centers it vertically */
     transform: translateY(-50%); /* Adjusts the button's position so it's perfectly centered */
 }
@@ -162,3 +162,4 @@ form button:hover {
         max-width: 100%;
     }
 }
+
