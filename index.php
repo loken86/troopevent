@@ -20,21 +20,30 @@ usort($events, function($a, $b) {
 </header>
 
 <nav>
-  <a href="signup.php">Sign Up</a>
-
   <!-- Hamburger Dropdown -->
   <div class="dropdown">
     <button class="dropbtn">&#9776;</button>
     <div class="dropdown-content">
       <a href="login.php">Login</a>
       <a href="create_event.php">Create Event</a>
+      <a href="signup.php">Sign Up</a>
+      <?php if(isset($_SESSION['user'])): ?>
+        <span style="padding: 10px 15px; display: block;">
+          Logged in as <?php echo $_SESSION['user']; ?>
+        </span>
+        <a href="logout.php">Logout</a>
+      <?php endif; ?>
     </div>
   </div>
 
-  <?php if(isset($_SESSION['user'])): ?>
-    <span style="margin-left:15px;">Logged in as <?php echo $_SESSION['user']; ?></span>
-    <a href="logout.php">Logout</a>
-  <?php endif; ?>
+  <!-- Right-side links (desktop only) -->
+  <div class="nav-right">
+    <a href="signup.php">Sign Up</a>
+    <?php if(isset($_SESSION['user'])): ?>
+      <span>Logged in as <?php echo $_SESSION['user']; ?></span>
+      <a href="logout.php">Logout</a>
+    <?php endif; ?>
+  </div>
 </nav>
 
 <main>
@@ -84,3 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
