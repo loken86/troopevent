@@ -30,6 +30,7 @@ header {
 nav {
     text-align: center;
     margin: 15px 0;
+    position: relative; /* anchor for dropdown absolute positioning */
 }
 
 /* Sign Up link */
@@ -41,8 +42,10 @@ nav > a {
 
 /* Dropdown container */
 .dropdown {
-    display: inline-block;
-    position: relative;
+    position: absolute;
+    top: 50%;         /* vertical center in nav */
+    right: 20px;      /* <<< adjust this value to move hamburger left/right */
+    transform: translateY(-50%);
 }
 
 /* Hamburger button */
@@ -54,27 +57,20 @@ nav > a {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-
-    /* Add positioning */
-    position: absolute; /* or fixed depending on your use case */
-    right: 350px; /* Adjust the distance from the left side */
-     /* Centers it vertically */
-    transform: translateY(-50%); /* Adjusts the button's position so it's perfectly centered */
 }
-
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
     position: absolute;
-     right: 100px;
+    top: 100%;   /* below the button */
+    right: 0;    /* align right edge with button */
     background-color: white;
     min-width: 150px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     z-index: 1;
     border-radius: 5px;
     text-align: left;
-
 }
 
 /* Links inside dropdown */
@@ -145,27 +141,4 @@ form button:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-    nav > a {
-        display: block;
-        margin: 5px 0;
-    }
-    .dropbtn {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
-    main {
-        margin: 10px;
-        padding: 15px;
-    }
-    form input, form textarea, form button {
-        max-width: 100%;
-    }
-}
-
-
-
-
-
-
-
+@medi
